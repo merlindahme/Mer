@@ -1,0 +1,142 @@
+import time
+
+pds = {'1':'香蕉', '2':'蘋果', '3':'橘子', '4':'鳳梨', '5':'柳橙'}
+
+cart = {}
+
+
+
+	
+print("welcome back to poopy shop")
+	
+time.sleep(1)
+	
+while True:
+	
+	poop = input(
+		
+ 	"請輸入"
+"'1'添加商品"
+"'2'移除商品"
+"'3'查詢購物車"
+"'q'離開"
+"'b'結帳""........")
+
+	print()
+	
+	if poop == "1":
+	
+		print('今日尚有商品清單：'+str(pds))
+	
+		time.sleep(1.1)
+	
+		print('欲添加商品..於下方輸入號碼加入購物車')
+		
+		print()
+		
+		time.sleep(0.5)
+	
+		tk = input("輸入欲購買商品號碼.........") 
+		
+		if tk not in pds:
+			
+			print("商品無法重複加入或輸入錯誤")
+			
+			time.sleep(0.5)
+			
+			print("loading.........")
+			
+			print()
+			
+			time.sleep(0.5)
+			
+			continue
+		
+		cart[tk] = pds[tk]
+		pds.pop(tk)
+		
+		print()
+		
+		print()
+		
+		time.sleep(0.5)
+		
+		print("目前購物車裡的商品......"+str(cart.values()))
+	
+		print()	
+		
+		time.sleep(1)
+		
+		print("loading......back to menu")
+		
+		print()
+		
+		time.sleep(1)
+	
+	if poop == "2":
+	
+		print('loading......')
+	
+		time.sleep(0.7)
+	
+		print("目前購物車裡的商品......"+str(cart.values()))
+		
+		print()
+		
+		time.sleep(0.5)
+
+		print("欲移除商品..於下方輸入號碼從購物車移除")
+		
+		print("商品編號對照：1.香蕉 2.蘋果 3.橘子 4.鳳梨 5.柳橙")
+		
+		time.sleep(0.5)
+	
+		tko = input("輸入欲移除商品號碼.........")
+		
+		if tko not in cart: 
+			
+			continue
+		
+		pds[tko] = cart[tko]
+		cart.pop(tko)
+		
+		time.sleep(1)
+		
+		print("目前購物車所剩商品"+str(cart.values()))
+		
+		print()
+		
+		print()
+		
+		
+	if poop =="3":
+		
+		time.sleep(1)
+		
+		print("目前購物車商品"+str(cart.values()))
+		
+		print()
+		
+		time.sleep(0.6)
+		
+		print("引導回主選單......")
+		
+		print()
+		
+	if poop == "b":
+		
+		time.sleep(0.5)
+	
+		print("結帳完成！購買商品"+str(cart.values())+"bye bye! :)")
+		
+		break
+		
+	if poop == "q":
+		
+		time.sleep(0.5)
+	
+		print("下次記得多買一點啊!QAQ 好吧.....bye....")
+	
+		break
+				
+		continue 
